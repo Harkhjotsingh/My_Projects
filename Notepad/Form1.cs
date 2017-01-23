@@ -26,6 +26,7 @@ namespace Notepad
             InitializeComponent();
         }
 
+        // Common Used Methods
         private void SaveAs()
         {
             SaveFileDialog saveAs = new SaveFileDialog();
