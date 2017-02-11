@@ -47,7 +47,7 @@ namespace Notepad
         #region Disply do you want to keep changes? Message 
         private void DoYouWantToKeepChanges()
         {
-            if (isFileContentChanged)
+            if (isFileContentChanged && MainWritingWindow.Text != "")
             {
                 DialogResult res = MessageBox.Show("Do you want to save Changes" + currentFileName, "Notepad", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information);
                 switch (res)
