@@ -27,6 +27,7 @@ namespace Notepad
         }
 
         // Common Used Methods.
+        #region SaveAs
         private void SaveAs()
         {
             SaveFileDialog saveAs = new SaveFileDialog();
@@ -42,6 +43,8 @@ namespace Notepad
             }
 
         }
+        #endregion
+        #region Disply do you want to keep changes? Message 
         private void DoYouWantToKeepChanges()
         {
             if (isFileContentChanged)
@@ -71,11 +74,13 @@ namespace Notepad
             }
         }
 
+        #endregion
+        #region Save File
         private void Save()
         {
             if (isFileSaved == true)
             {
-                
+
                 MainWritingWindow.SaveFile(currentFileName, RichTextBoxStreamType.PlainText);
 
                 isFileSaved = true;
@@ -83,7 +88,7 @@ namespace Notepad
             }
             else
             {
-                if(isFileContentChanged == true)
+                if (isFileContentChanged == true)
                 {
                     SaveFileDialog save = new SaveFileDialog();
                     save.Filter = "Text Document(*.txt)|*.txt|All Files(*.*)|*.*";
@@ -103,9 +108,8 @@ namespace Notepad
                     this.Text = "Untiteled - Notepad";
                 }
             }
-            }
-
-
+        }
+        #endregion
         private void richTextBox1_TextChanged(object sender, EventArgs e)
         {
             isFileContentChanged = true;
@@ -134,23 +138,23 @@ namespace Notepad
             if (MainWritingWindow.SelectedText != "")
             { deleteToolStripMenuItem.Enabled = true; }
         }
-
-        // ########################################### FILE CONTROLS  ##############################################
         
-        // new
+        //MenuControls Logic
+        #region FileControls        
+        #region New File
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DoYouWantToKeepChanges();   
+            DoYouWantToKeepChanges();
         }
-
-        // Open
+        #endregion
+        #region Open File
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DoYouWantToKeepChanges();
 
             OpenFileDialog open = new OpenFileDialog();
             open.Filter = "Text Files(*.txt)|*.txt|Rich Text Format (*.rtf)|*.rtf|All Files(*.*)|*.*";
-            if(open.ShowDialog() == DialogResult.OK)
+            if (open.ShowDialog() == DialogResult.OK)
             {
                 MainWritingWindow.LoadFile(open.FileName, RichTextBoxStreamType.PlainText);
                 this.Text = Path.GetFileName(open.FileName) + " - Notepad";
@@ -158,50 +162,51 @@ namespace Notepad
                 isFileSaved = true;
                 isFileContentChanged = false;
                 currentFileName = open.FileName;
-            }                      
+            }
         }
-        // Save
+        #endregion
+        #region Save File
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Save();
         }
-        // SaveAs
+        #endregion
+        #region SaveAs
         private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SaveAs();
         }
-
-
+        #endregion
         // Print
-
-        //Close
+        #region Close Editor
         private void closeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DoYouWantToKeepChanges();
             Application.Exit();
         }
+        #endregion
+        #endregion
 
-        // ########################################### FONT CONTROLS  ##############################################
-
-        //Normal
-
-        //BOLD
+        #region FontControls     
+        #region BoldFont
         private void boldToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MainWritingWindow.SelectionFont = new Font(MainWritingWindow.Font, FontStyle.Bold);
         }
-
-        //Italic
+        #endregion
+        #region Italic
         private void italicToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MainWritingWindow.SelectionFont = new Font(MainWritingWindow.Font, FontStyle.Italic);
         }
-        //UnderLine
+        #endregion
+        #region UnderLine
         private void underLineToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MainWritingWindow.SelectionFont = new Font(MainWritingWindow.Font, FontStyle.Underline);
         }
-        //Select
+        #endregion
+        #region Select
         private void selectToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FontDialog fonts = new FontDialog();
@@ -211,62 +216,71 @@ namespace Notepad
                 MainWritingWindow.SelectionFont = fonts.Font;
             }
         }
+        #endregion
+        #endregion
 
-
-        // ########################################### EDIT CONTROLS  ##############################################
-
-        // Undo
+        #region EditControls
+        #region Undo
         private void undoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MainWritingWindow.Undo();
             redoToolStripMenuItem.Enabled = true;
         }
-        // Redo
+        #endregion
+        #region Redo
         private void redoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MainWritingWindow.Redo();
             undoToolStripMenuItem.Enabled = true;
         }
-        // Cut
+        #endregion
+        #region Cut
         private void cutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MainWritingWindow.Cut();
             undoToolStripMenuItem.Enabled = true;
         }
-        // Copy
+        #endregion
+        #region Copy
         private void copyToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MainWritingWindow.Copy();
         }
-        // Paste
+        #endregion
+        #region Paste
         private void pasteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MainWritingWindow.Paste();
         }
-        // Delete
+        #endregion
+        #region Delete
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MainWritingWindow.SelectedText = "";
             undoToolStripMenuItem.Enabled = true;
         }
-        // SelectAll
+        #endregion
+        #region SelectAll
         private void selectAllToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MainWritingWindow.SelectAll();
         }
-        // DateTime
+        #endregion
+        #region DateTime
         private void dateTimeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MainWritingWindow.Text += DateTime.Now;
         }
-        // ########################################### HELP  ##############################################
+        #endregion
+        #endregion
 
-        //About
+        #region HelpControl
+        #region About
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show("This Notepad Project is developed by Harkhjot Singh aka Harry. If you any questions or concerns please send me an email at harkhjotsingh@gmail.com", "About", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
-
-
+        #endregion
+        #endregion
     }
 }
