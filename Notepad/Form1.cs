@@ -114,7 +114,6 @@ namespace Notepad
         {
             isFileContentChanged = true;
 
-
             if (MainWritingWindow.TextLength == 0)
             {
                 undoToolStripMenuItem.Enabled = false;
@@ -133,6 +132,7 @@ namespace Notepad
                 selectAllToolStripMenuItem.Enabled = true;
                 boldToolStripMenuItem.Enabled = true;
                 italicToolStripMenuItem.Enabled = true;
+                underLineToolStripMenuItem.Enabled = true;
             }
 
             if (MainWritingWindow.SelectedText != "")
