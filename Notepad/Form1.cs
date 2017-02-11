@@ -123,6 +123,8 @@ namespace Notepad
                 selectAllToolStripMenuItem.Enabled = false;
                 boldToolStripMenuItem.Enabled = false;
                 italicToolStripMenuItem.Enabled = false;
+                underLineToolStripMenuItem.Enabled = false;
+                selectAllToolStripMenuItem.Enabled = false;
             }
             else
             {
@@ -207,7 +209,7 @@ namespace Notepad
         }
         #endregion
         #region Select
-        private void selectToolStripMenuItem_Click(object sender, EventArgs e)
+        private void selectFontToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FontDialog fonts = new FontDialog();
             fonts.Font = MainWritingWindow.SelectionFont;

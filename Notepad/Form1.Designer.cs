@@ -42,7 +42,7 @@
             this.normalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.italicToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.underLineToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.selectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.selectFontToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.boldToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.undoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -101,7 +101,7 @@
             this.newToolStripMenuItem.Image = global::Notepad.Properties.Resources.File;
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
             this.newToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.newToolStripMenuItem.Text = "&New";
             this.newToolStripMenuItem.Click += new System.EventHandler(this.newToolStripMenuItem_Click);
             // 
@@ -110,7 +110,7 @@
             this.openToolStripMenuItem.Image = global::Notepad.Properties.Resources.Open;
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
             this.openToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.openToolStripMenuItem.Text = "&Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
@@ -119,7 +119,7 @@
             this.saveToolStripMenuItem.Image = global::Notepad.Properties.Resources.Save;
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
             this.saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.saveToolStripMenuItem.Text = "&Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
@@ -127,7 +127,7 @@
             // 
             this.saveAsToolStripMenuItem.Image = global::Notepad.Properties.Resources.saveAs;
             this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.saveAsToolStripMenuItem.Text = "&Save&As";
             this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.saveAsToolStripMenuItem_Click);
             // 
@@ -136,14 +136,14 @@
             this.printToolStripMenuItem.Image = global::Notepad.Properties.Resources.print;
             this.printToolStripMenuItem.Name = "printToolStripMenuItem";
             this.printToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
-            this.printToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.printToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.printToolStripMenuItem.Text = "&Print";
             // 
             // closeToolStripMenuItem
             // 
             this.closeToolStripMenuItem.Image = global::Notepad.Properties.Resources.Close;
             this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.closeToolStripMenuItem.Text = "&Close";
             this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
             // 
@@ -153,7 +153,7 @@
             this.normalToolStripMenuItem,
             this.italicToolStripMenuItem,
             this.underLineToolStripMenuItem,
-            this.selectToolStripMenuItem,
+            this.selectFontToolStripMenuItem,
             this.boldToolStripMenuItem});
             this.fontToolStripMenuItem.Image = global::Notepad.Properties.Resources.Font;
             this.fontToolStripMenuItem.Name = "fontToolStripMenuItem";
@@ -189,11 +189,11 @@
             // 
             // selectToolStripMenuItem
             // 
-            this.selectToolStripMenuItem.Image = global::Notepad.Properties.Resources.File2;
-            this.selectToolStripMenuItem.Name = "selectToolStripMenuItem";
-            this.selectToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
-            this.selectToolStripMenuItem.Text = "&Select";
-            this.selectToolStripMenuItem.Click += new System.EventHandler(this.selectToolStripMenuItem_Click);
+            this.selectFontToolStripMenuItem.Image = global::Notepad.Properties.Resources.File2;
+            this.selectFontToolStripMenuItem.Name = "selectToolStripMenuItem";
+            this.selectFontToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.selectFontToolStripMenuItem.Text = "&Select Font";
+            this.selectFontToolStripMenuItem.Click += new System.EventHandler(this.selectFontToolStripMenuItem_Click);
             // 
             // boldToolStripMenuItem
             // 
@@ -359,7 +359,7 @@
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cutToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem selectToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem selectFontToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem normalToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem boldToolStripMenuItem;
     }
